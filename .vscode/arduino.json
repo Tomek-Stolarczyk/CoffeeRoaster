@@ -1,0 +1,5 @@
+{
+    "board": "arduino:avr:uno",
+    "sketch": "CoffeeFW\\Coffee.ino",
+    "output" : "CoffeeRoaster"
+}
