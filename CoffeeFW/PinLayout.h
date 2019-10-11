@@ -1,3 +1,6 @@
+#ifndef PINLAYOUT_H
+#define PINLAYOUT_H
+
 #include "Arduino.h"
 
 typedef uint8_t Pin_ID;
@@ -54,3 +57,5 @@ namespace Pins
     static const DigitalPWNPin ktcCS = DigitalPWNPin::D9;
     static const DigitalPWNPin ktcCLK = DigitalPWNPin::D10;
 }
+
+#endif

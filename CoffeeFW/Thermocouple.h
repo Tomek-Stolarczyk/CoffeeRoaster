@@ -1,3 +1,6 @@
+#ifndef THERMOCOUPLE_H
+#define THERMOCOUPLE_H
+
 #include "PinLayout.h"
 #include "Updateable.h"
 
@@ -17,3 +20,5 @@ class Thermocouple : public Updateable
     double tempurature = 0;
     char tempurature_s[7];
 };
+
+#endif

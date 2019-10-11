@@ -1,5 +1,7 @@
+#ifndef MANUALCONTROLLER_H
+#define MANUALCONTROLLER_H
+
 #include "Updateable.h"
-#include "PinLayout.h"
 
 template <const AnalogPin EnablePin, const AnalogPin ValuePin>
 class ManualController : public Updateable
@@ -14,6 +16,4 @@ class ManualController : public Updateable
     unsigned int value = 0;
 };
 
-
-static ManualController<Pins::kManualControllerEnable, 
-                        Pins::kManualControllerValue> g_Controller;
+#endif
