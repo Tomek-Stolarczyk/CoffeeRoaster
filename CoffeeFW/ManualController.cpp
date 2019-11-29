@@ -1,20 +1,26 @@
-#include "ManualController.h"
+#include "ManualController.hpp"
 
-template<const AnalogPin a, const AnalogPin b>
-const bool ManualController<a,b>::IsOverrideEnabled() const
+Updateable* CreateManualController()
 {
-  return enabled;
+  return new ManualController<Pins::kManualControllerEnable,
+                              Pins::kManualControllerValue>();
 }
 
-template<const AnalogPin a, const AnalogPin b>
-const unsigned int ManualController<a,b>::GetOverrideValue() const
+template<AnalogPin enable, AnalogPin value>
+bool const ManualController<enable, value>::IsOverrideEnabled() const
 {
-  return value;
+  return m_enabled;
 }
 
-template<const AnalogPin EnablePin, const AnalogPin ValuePin>
-void ManualController<EnablePin,ValuePin>::Update()
+template<AnalogPin enable, AnalogPin value>
+uint32_t const ManualController<enable,value>::GetOverrideValue() const
 {
-  enabled = analogRead(static_cast<uint8_t>(EnablePin));
-  value = analogRead(static_cast<uint8_t>(ValuePin));
+  return m_value;
+}
+
+template<AnalogPin enable, AnalogPin value>
+void ManualController<enable,value>::Update()
+{
+  m_enabled = analogRead(static_cast<uint8_t>(enable));
+  m_value = analogRead(static_cast<uint8_t>(value));
 }

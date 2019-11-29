@@ -1,19 +1,14 @@
-#include "CoffeeRoaster.h"
-#include "PinLayout.h"
-
-enum class UpdatableComponents{
-    MANUALCONTROLLER = 0,
-    THERMOCOUPLE = 1,
-    NUMBEROFCOMPONENTS
-};
-
+#include "CoffeeRoaster.hpp"
+#include "PinLayout.hpp"
+#include "Thermocouple.hpp"
+#include "ManualController.hpp"
 
 void CoffeeRoaster::setup()
 {
-  Thermocouple a;
+    m_components[MANUAL_CONTROLLER] = CreateManualController();
+    m_components[THERMOCOUPLE] = CreateThermocouple();
 }
 
 void CoffeeRoaster::loop()
 {
-  ManualController b;
 }

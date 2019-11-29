@@ -1,6 +1,6 @@
-#include "CoffeeRoaster.h"
+#include "CoffeeRoaster.hpp"
 
-static CoffeeRoaster Roaster;
+CoffeeRoaster Roaster;
 
 void setup() {
   Serial.begin(19200);

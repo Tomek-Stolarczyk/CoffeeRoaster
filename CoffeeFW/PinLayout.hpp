@@ -1,9 +1,11 @@
 #ifndef PINLAYOUT_H
 #define PINLAYOUT_H
 
+#include <stdint.h>
+
 #include "Arduino.h"
 
-typedef uint8_t Pin_ID;
+using Pin_ID = uint8_t;
 
 enum class AnalogPin : Pin_ID
 {
@@ -46,16 +48,16 @@ enum class DigitalPWNPin : Pin_ID
 namespace Pins
 {
     // Manual knob override
-    static const AnalogPin kManualControllerEnable = AnalogPin::A0; 
-    static const AnalogPin kManualControllerValue = AnalogPin::A1;
+    constexpr AnalogPin kManualControllerEnable{ AnalogPin::A0 }; 
+    constexpr AnalogPin kManualControllerValue{ AnalogPin::A1 };
     
     // Fan attached to solid state relay
-    static const AnalogPin kFanOutput = AnalogPin::A5;
+    constexpr AnalogPin kFanOutput{ AnalogPin::A5 };
 
     // Thermocouple
-    static const DigitalPin kThermoSO = DigitalPin::D8;
-    static const DigitalPWNPin ktcCS = DigitalPWNPin::D9;
-    static const DigitalPWNPin ktcCLK = DigitalPWNPin::D10;
+    constexpr DigitalPin kThermocoupleSO{ DigitalPin::D8 };
+    constexpr DigitalPWNPin kThermocoupleCS{ DigitalPWNPin::D9 };
+    constexpr DigitalPWNPin kThermocoupleCLK{ DigitalPWNPin::D10 };
 }
 
 #endif

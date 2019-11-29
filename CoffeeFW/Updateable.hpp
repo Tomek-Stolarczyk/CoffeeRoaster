@@ -4,7 +4,7 @@
 class Updateable
 {
   public:
-    virtual void Update() = 0;
+    virtual void Update() noexcept = 0;
 };
 
 #endif

@@ -1,5 +1,6 @@
 {
     "board": "arduino:avr:uno",
     "sketch": "CoffeeFW\\Coffee.ino",
-    "output" : "CoffeeRoaster"
+    "output": "CoffeeRoaster",
+    "programmer": "AVRISP mkII"
 }
